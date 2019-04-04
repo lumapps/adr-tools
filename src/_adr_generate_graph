@@ -5,16 +5,16 @@ eval "$($(dirname $0)/adr-config)"
 ## usage: adr generate graph [-e LINK-EXTENSION]
 ##
 ## Generates a visualisation of the links between decision records in
-## Graphviz format.  This can be piped into the graphviz tools to 
+## Graphviz format.  This can be piped into the graphviz tools to
 ## generate a an image file.
-## 
+##
 ## Each node in the graph represents a decision record and is linked to
-## the decision record document.  
+## the decision record document.
 ##
 ## Options:
 ##
-## -e LINK-EXTENSION 
-##         The file extension of the documents to which generated links refer. 
+## -e LINK-EXTENSION
+##         The file extension of the documents to which generated links refer.
 ##         Defaults to `.html`.
 ##
 ## E.g. to generate a graph visualisation of decision records in SVG format:
@@ -32,7 +32,7 @@ template_type=$("$adr_bin_dir/_adr_type")
 while getopts e: arg
 do
     case "$arg" in
-        e) 
+        e)
 			link_extension="$OPTARG"
           	;;
     	*)
@@ -55,25 +55,25 @@ for f in $("$adr_bin_dir/adr-list")
 do
 	n=$(index "$f")
 	title=$("$adr_bin_dir/_adr_title" $f)
-	
+
 	echo "  _$n [label=\"$title\"; URL=\"$(basename $f .md)${link_extension}\"]"
     case $template_type in
-    "")
-	if [ $n -gt 1 ]
-	then
-		echo "  _$(($n - 1)) -> _$n [style=\"dotted\"];"
-	fi
+        "")
+            if [ $n -gt 1 ]
+            then
+                echo "  _$(($n - 1)) -> _$n [style=\"dotted\"];"
+            fi
 
-	"$adr_bin_dir/_adr_links" "$f" | sed -E -e 's/^([0-9]+)=(.+)$/  _'"$n"' -> _\1 [label="\2"]/'
-    ;;
-    madr)
-	if [ $n -gt 0 ]
-	then
-		echo "  _$(($n - 1)) -> _$n [style=\"dotted\"];"
-	fi
+            "$adr_bin_dir/_adr_links" "$f" | sed -E -e 's/^([0-9]+)=(.+)$/  _'"$n"' -> _\1 [label="\2"]/'
+        ;;
+        madr)
+            if [ $n -gt 0 ]
+            then
+                echo "  _$(($n - 1)) -> _$n [style=\"dotted\"];"
+            fi
 
-	"$adr_bin_dir/_adr_links" "$f" | sed -E -e 's/^([0-9]+)=(.+)$/  _'"$n"' -> _\1 [label="\2"]/'
-    ;;    
-esac
+            "$adr_bin_dir/_adr_links" "$f" | sed -E -e 's/^([0-9]+)=(.+)$/  _'"$n"' -> _\1 [label="\2"]/'
+        ;;
+    esac
 done
 echo "}"
