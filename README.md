@@ -14,7 +14,7 @@ Use the `adr` command to manage ADRs.  Try running `adr help`.
 
 ADRs are stored in your project as Markdown files in the `doc/adr` directory.
 
-0. Specify you want to use madr format for adr
+0. Specify you want to use madr format for adr in the root of your project
 
         echo "madr" > .adr-type
 
