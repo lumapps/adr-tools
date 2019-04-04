@@ -1,5 +1,6 @@
 ADR Tools
 =========
+[![CircleCI](https://circleci.com/gh/lumapps/adr-tools/tree/lumadr.svg?style=svg)](https://circleci.com/gh/lumapps/adr-tools/tree/lumadr)
 
 A command-line tool for working with [Architecture Decision Records][ADRs] (ADRs).
 

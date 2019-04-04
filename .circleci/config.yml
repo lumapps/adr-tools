@@ -7,4 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-        command: make clean check
+          command: apt-get update && apt-get install make
+      - run:
+          command: make clean check
