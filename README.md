@@ -3,7 +3,7 @@ ADR Tools
 
 A command-line tool for working with [Architecture Decision Records][ADRs] (ADRs).
 
-[![Build Status](https://travis-ci.org/npryce/adr-tools.svg?branch=master)](https://travis-ci.org/npryce/adr-tools)
+Especially it use a specific adr format : madr. This is not the default choice and is enforced through a configuration file named `.adr-type` containing the kind of template you want to use. Currently only `madr` is available.
 
 Quick Start
 -----------
@@ -14,13 +14,16 @@ Use the `adr` command to manage ADRs.  Try running `adr help`.
 
 ADRs are stored in your project as Markdown files in the `doc/adr` directory.
 
+0. Specify you want to use madr format for adr
+
+        echo "madr" > .adr-type
 
 1. Create an ADR directory in the root of your project:
 
         adr init doc/architecture/decisions
 
     This will create the first ADR recording that you are using ADRs
-    to record architectural decisions and linking to 
+    to record architectural decisions and linking to
     [Michael Nygard's article on the subject][ADRs].
 
 2. Create Architecture Decision Records
@@ -40,7 +43,7 @@ ADRs are stored in your project as Markdown files in the `doc/adr` directory.
     ADR 9, and changes the status of ADR 9 to indicate that it is
     superceded by the new ADR.  It then opens the new ADR in your
     editor of choice.
-    
+
 3. For further information, use the built in help:
 
         adr help
@@ -48,6 +51,6 @@ ADRs are stored in your project as Markdown files in the `doc/adr` directory.
 
 See the [tests](tests/) for detailed examples.
 
-The decisions for this tool are recorded as [architecture decision records in the project repository](doc/adr/). 
+The decisions for this tool are recorded as [architecture decision records in the project repository](doc/adr/).
 
 [ADRs]: http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions
