@@ -26,14 +26,14 @@ eval "$($(dirname $0)/adr-config)"
 ##                 it has been superceded by the new ADR.
 ##
 ## -l TARGET:LINK:REVERSE-LINK
-##                 Links the new ADR to a previous ADR.  
-##                 TARGET is a reference (number or partial filename) of a 
-##                 previous decision. 
+##                 Links the new ADR to a previous ADR.
+##                 TARGET is a reference (number or partial filename) of a
+##                 previous decision.
 ##                 LINK is the description of the link created in the new ADR.
 ##                 REVERSE-LINK is the description of the link created in the
 ##                 existing ADR that will refer to the new ADR.
 ##
-## Multiple -s and -l options can be given, so that the new ADR can supercede 
+## Multiple -s and -l options can be given, so that the new ADR can supercede
 ## or link to multiple existing ADRs.
 ##
 ## E.g. to create a new ADR with the title "Use MySQL Database":
@@ -80,7 +80,7 @@ then
     if [ -d "$dstdir/templates" ]
     then
         template="$dstdir/templates/template.md"
-    else 
+    else
         template="$dstdir/template.md"
     fi
         if [ ! -f "$template" ]
@@ -89,7 +89,7 @@ then
             then
                 template="$adr_template_dir/template.md"
             else
-                template="$adr_template_dir/template-$template_type.md"        
+                template="$adr_template_dir/template-$template_type.md"
             fi
         fi
 fi
@@ -112,7 +112,7 @@ filecount=$(ls $dstdir | grep -Eo '^[0-9]+' | wc -l)
     if [ -z $maxid ]
     then
     newnum_madr=0
-    else    
+    else
     newnum_madr=$(($maxid + 1))
 fi
 else
@@ -122,7 +122,7 @@ fi
 
 if [ -z $template_type ]
 then
-    newid=$(printf "%04d" $newnum)    
+    newid=$(printf "%04d" $newnum)
 else
     newid=$(printf "%04d" $newnum_madr)
 fi
@@ -144,6 +144,7 @@ case $template_type in
     ;;
     madr)
     cat $template | sed \
+    -e "s|NUMBER|$newnum|" \
     -e "s/\[short title of solved problem and solution\]/$title/" \
     -e "s/\* Status: \[accepted | superseeded by \[ADR-0005\](0005-example.md) | deprecated | …\] <!-- optional -->/\* Status: Accepted/" \
     -e "s/\* Date: \[YYYY-MM-DD when the decision was last updated\] <!-- optional -->/\* Date: $date/" \

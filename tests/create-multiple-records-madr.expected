@@ -12,7 +12,7 @@ ls docs
 0002-second-decision.md
 0003-third-decision.md
 head -8 docs/0002-second-decision.md
-# Second Decision
+# 2. Second Decision
 
 * Status: Accepted
 * Deciders: [list everyone involved in the decision] <!-- optional -->
@@ -21,7 +21,7 @@ head -8 docs/0002-second-decision.md
 Technical Story: [description | ticket/issue URL] <!-- optional -->
 
 head -8 docs/0003-third-decision.md
-# Third Decision
+# 3. Third Decision
 
 * Status: Accepted
 * Deciders: [list everyone involved in the decision] <!-- optional -->

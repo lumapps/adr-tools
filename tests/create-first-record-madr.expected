@@ -3,7 +3,7 @@ docs/0000-record-architecture-decisions.md
 adr new The First Decision
 docs/0001-the-first-decision.md
 cat docs/0001-the-first-decision.md
-# The First Decision
+# 1. The First Decision
 
 * Status: Accepted
 * Deciders: [list everyone involved in the decision] <!-- optional -->

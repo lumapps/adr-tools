@@ -1,4 +1,4 @@
-# [short title of solved problem and solution]
+# NUMBER. [short title of solved problem and solution]
 
 * Status: [accepted | superseeded by [ADR-0005](0005-example.md) | deprecated | …] <!-- optional -->
 * Deciders: [list everyone involved in the decision] <!-- optional -->

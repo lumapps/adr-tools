@@ -7,15 +7,15 @@ docs/0002-second-record.md
 adr new -s 1 -s 2 Third Record
 docs/0003-third-record.md
 head -5 docs/0001-first-record.md
-# First Record
+# 1. First Record
 
-* Status: Superceded by [Third Record](0003-third-record.md)
+* Status: Superceded by [3. Third Record](0003-third-record.md)
 * Deciders: [list everyone involved in the decision] <!-- optional -->
 * Date: 1992-01-12
 head -5 docs/0002-second-record.md
-# Second Record
+# 2. Second Record
 
-* Status: Superceded by [Third Record](0003-third-record.md)
+* Status: Superceded by [3. Third Record](0003-third-record.md)
 * Deciders: [list everyone involved in the decision] <!-- optional -->
 * Date: 1992-01-12
 tail -6 docs/0003-third-record.md
@@ -23,5 +23,5 @@ tail -6 docs/0003-third-record.md
 
 * [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
 * … <!-- numbers of links can vary -->
-* Supercedes [First Record](0001-first-record.md)
-* Supercedes [Second Record](0002-second-record.md)
+* Supercedes [1. First Record](0001-first-record.md)
+* Supercedes [2. Second Record](0002-second-record.md)

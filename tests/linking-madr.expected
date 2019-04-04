@@ -13,17 +13,17 @@ tail -5 docs/0001-first-record.md
 
 * [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
 * … <!-- numbers of links can vary -->
-* Amended by [Third Record](0003-third-record.md)
+* Amended by [3. Third Record](0003-third-record.md)
 tail -5 docs/0002-second-record.md
 ## Links <!-- optional -->
 
 * [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
 * … <!-- numbers of links can vary -->
-* Clarified by [Third Record](0003-third-record.md)
+* Clarified by [3. Third Record](0003-third-record.md)
 tail -6 docs/0003-third-record.md
 ## Links <!-- optional -->
 
 * [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
 * … <!-- numbers of links can vary -->
-* Amends [First Record](0001-first-record.md)
-* Clarifies [Second Record](0002-second-record.md)
+* Amends [1. First Record](0001-first-record.md)
+* Clarifies [2. Second Record](0002-second-record.md)
